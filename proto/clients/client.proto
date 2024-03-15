@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package grpccrm.grpc.client.v1;
+option go_package = "clients";
+import "proto/clients/client_messages.proto";
+
+service ClientsApi {
+  rpc ListClient(ListClientRequest) returns (ListClientResponse);
+  rpc GetClient (GetClientRequest) returns (GetClientResponse);
+  rpc GetClients (GetClientsRequest) returns (GetClientsResponse);
+  rpc GetClientsByTYPE (GetClientsByTYPERequest) returns (GetClientsByTYPEResponse);
+  rpc GetClientsByMAKE (GetClientsByMAKERequest) returns (GetClientsByMAKEResponse);
+  rpc AddClient (AddClientRequest) returns (AddClientResponse);
+  rpc DeleteClient (DeleteClientRequest) returns  (DeleteClientResponse);
+}
+
+message ListClientRequest {} 
+
+message ListClientResponse {
+  repeated Client clients = 1;
+}

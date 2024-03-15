@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package grpccrm.grpc.client.v1;
+option go_package = "clients"; 
+
+message Client {
+  string id = 1;
+  string fio = 2;
+  string email = 3;
+  string phone = 4;
+}
